@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>240</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 15px;
+      background: white;
+      font-family: Baskerville, sans-serif;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    /* ESTRUCTURA PRINCIPAL: 3 COLUMNAS */
+    .layout {
+      display: grid;
+      grid-template-columns: 250px 550px 250px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* CADA COLUMNA */
+    .columna {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* TEXTO */
+    .texto {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* TAMAÑOS DE IMAGEN */
+    .img-chica {
+      width: 250px;
+      height: auto;
+      display: block;
+    }
+
+    .img-mediana {
+      width: 350px;
+      height: auto;
+      display: block;
+    }
+
+    .img-grande {
+      width: 550px;
+      height: auto;
+      display: block;
+    }
+
+    .img-full {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* CONTENEDOR PARA ZOOM FOTOCALLE */
+    .fotocalle-zoom {
+      width: 250px;
+      height: 300px; /* Altura del recorte */
+      overflow: hidden;
+    }
+
+    .fotocalle-zoom img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.6); /* Nivel de zoom */
+      transform-origin: center bottom; /* Enfoca la parte inferior (baldosa) */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="layout">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="columna">
+
+      <img src="AA040.jpg" class="img-chica" alt="" loading="lazy">
+
+      <div class="texto">
+        <p>Le he dado</p>
+        <p>a todo lo que veo</p>
+        <p>el significado que tiene para mi</p>
+      </div>
+
+      <img src="Imagen1.jpg" class="img-chica" alt="" loading="lazy">
+      <img src="imagen5.jpg" class="img-chica" alt="" loading="lazy">
+
+      <!-- FOTOCALLE CON ZOOM -->
+      <div class="fotocalle-zoom">
+        <img src="fotocalle.jpg" alt="Foto calle baldosa" loading="lazy">
+      </div>
+
+    </div>
+
+
+    <!-- COLUMNA CENTRAL -->
+    <div class="columna">
+
+      <img src="imagencentral.JPG" class="img-grande" alt="" loading="lazy">
+
+      <img src="imagen6.JPG" class="img-chica" alt="" loading="lazy">
+
+    </div>
+
+
+    <!-- COLUMNA DERECHA -->
+    <div class="columna">
+
+      <img src="madera.jpg" class="img-grande" alt="" loading="lazy">
+      <img src="jesusedit.jpg" class="img-grande" alt="" loading="lazy">
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Archivos de sistema de macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Archivos y directorios que el sistema pueda generar (Thumbs.db para Windows, etc.)
+Thumbs.db
+ehthumbs.db
+Desktop.ini
