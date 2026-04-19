@@ -3,120 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>240 Journal</title>
+  <title>240</title>
 
   <style>
-    :root {
-      --bg-color: #fcfcfc;
-      --text-color: #333;
-      --accent-color: #6c757d;
-    }
-
     body {
       margin: 0;
-      padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      padding: 0.5vw; /* Margen general mínimo */
+      background: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #000000;
       -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr 1fr; /* Columna central un poco más contenida */
+      gap: 0.5vw; /* Separación mínima entre columnas */
+      align-items: stretch; /* Todas las columnas tendrán la misma altura */
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 70px;
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5vw; /* Separación mínima vertical entre imágenes */
     }
 
-    h1 {
-      font-family: 'Baskerville', 'Times New Roman', serif;
-      font-weight: normal;
-      font-size: 2.5rem;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
+    /* Truco infalible para que la imagen central cubra todo el alto de su columna */
+    .col:nth-child(2) {
+      position: relative;
+    }
+    .col:nth-child(2) img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    img {
+      display: block;
+      width: 100%; /* Obligamos a TODAS las imágenes a ocupar el ancho total de su columna. ¡Adiós al aire blanco! */
+      height: auto;
+      object-fit: cover;
     }
 
     .texto {
-      font-family: 'Baskerville', 'Times New Roman', serif;
-      font-size: 1.3rem;
-      line-height: 1.6;
-      color: var(--accent-color);
-      font-style: italic;
-      margin: 0 auto;
-      max-width: 600px;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      font-family: 'Times New Roman', Times, serif;
+      color: #222;
+      padding: 1vw 0; /* Solo un ínfimo respiro vertical para que el texto no esté literalmente pegado a la foto */
     }
 
     .texto p {
-      margin: 8px 0;
-    }
-
-    /* Masonry Layout */
-    .gallery {
-      column-count: 3;
-      column-gap: 30px;
+      margin: 3px 0;
     }
 
     @media (max-width: 900px) {
-      .gallery { column-count: 2; }
-    }
-
-    @media (max-width: 600px) {
-      .gallery { column-count: 1; }
-    }
-
-    .gallery-item {
-      break-inside: avoid;
-      margin-bottom: 30px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      background: white;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.04);
+      .grid-container {
+        grid-template-columns: 1fr;
+        gap: 2vw;
+      }
+      .col {
+        gap: 2vw;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <h1>240 Journal</h1>
+  <div class="grid-container">
+    
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="col">
+      <img src="imagen1.jpg" alt="Imagen 1" loading="lazy">
+      
       <div class="texto">
         <p>Le he dado</p>
         <p>a todo lo que veo</p>
         <p>el significado que tiene para mí</p>
       </div>
-    </header>
 
-    <div class="gallery">
-      <div class="gallery-item"><img src="imagen1.jpg" alt="Journal 1" loading="lazy"></div>
-      <div class="gallery-item"><img src="imagen2.jpg" alt="Journal 2" loading="lazy"></div>
-      <div class="gallery-item"><img src="imagen3.jpg" alt="Journal 3" loading="lazy"></div>
-      <div class="gallery-item"><img src="imagen4.jpg" alt="Journal 4" loading="lazy"></div>
-      <div class="gallery-item"><img src="imagen5.jpg" alt="Journal 5" loading="lazy"></div>
-      <div class="gallery-item"><img src="imagen6.jpg" alt="Journal 6" loading="lazy"></div>
-      <div class="gallery-item"><img src="imagen7.jpg" alt="Journal 7" loading="lazy"></div>
-      <div class="gallery-item"><img src="imagen8.jpg" alt="Journal 8" loading="lazy"></div>
+      <img src="imagen8.jpg" alt="Imagen 8" loading="lazy">
     </div>
+
+    <!-- COLUMNA CENTRAL -->
+    <div class="col">
+      <!-- La imagen central ahora ocupa absolutamente todo el ancho de su columna -->
+      <img src="imagen5.jpg" alt="Imagen 5" loading="lazy">
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col">
+      <img src="imagen4.jpg" alt="Imagen 4" loading="lazy">
+      <img src="imagen6.jpg" alt="Imagen 6" loading="lazy">
+    </div>
+
   </div>
 
 </body>
