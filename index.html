@@ -2,127 +2,121 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>240</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>240 Journal</title>
 
   <style>
+    :root {
+      --bg-color: #fcfcfc;
+      --text-color: #333;
+      --accent-color: #6c757d;
+    }
+
     body {
       margin: 0;
-      padding: 15px;
-      background: white;
-      font-family: Baskerville, sans-serif;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    p {
-      margin: 0;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
     }
 
-    /* ESTRUCTURA PRINCIPAL: 3 COLUMNAS */
-    .layout {
-      display: grid;
-      grid-template-columns: 250px 550px 250px;
-      gap: 40px;
-      align-items: start;
+    header {
+      text-align: center;
+      margin-bottom: 70px;
     }
 
-    /* CADA COLUMNA */
-    .columna {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+    h1 {
+      font-family: 'Baskerville', 'Times New Roman', serif;
+      font-weight: normal;
+      font-size: 2.5rem;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
     }
 
-    /* TEXTO */
     .texto {
-      font-size: 15px;
-      line-height: 1.5;
+      font-family: 'Baskerville', 'Times New Roman', serif;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: var(--accent-color);
+      font-style: italic;
+      margin: 0 auto;
+      max-width: 600px;
     }
 
-    /* TAMAÑOS DE IMAGEN */
-    .img-chica {
-      width: 250px;
-      height: auto;
-      display: block;
+    .texto p {
+      margin: 8px 0;
     }
 
-    .img-mediana {
-      width: 350px;
-      height: auto;
-      display: block;
+    /* Masonry Layout */
+    .gallery {
+      column-count: 3;
+      column-gap: 30px;
     }
 
-    .img-grande {
-      width: 550px;
-      height: auto;
-      display: block;
+    @media (max-width: 900px) {
+      .gallery { column-count: 2; }
     }
 
-    .img-full {
-      width: 100%;
-      height: auto;
-      display: block;
+    @media (max-width: 600px) {
+      .gallery { column-count: 1; }
     }
 
-    /* CONTENEDOR PARA ZOOM FOTOCALLE */
-    .fotocalle-zoom {
-      width: 250px;
-      height: 300px; /* Altura del recorte */
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 30px;
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      background: white;
     }
 
-    .fotocalle-zoom img {
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .gallery-item img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.6); /* Nivel de zoom */
-      transform-origin: center bottom; /* Enfoca la parte inferior (baldosa) */
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
     }
   </style>
 </head>
-
 <body>
 
-  <div class="layout">
-
-    <!-- COLUMNA IZQUIERDA -->
-    <div class="columna">
-
-      <img src="AA040.jpg" class="img-chica" alt="" loading="lazy">
-
+  <div class="container">
+    <header>
+      <h1>240 Journal</h1>
       <div class="texto">
         <p>Le he dado</p>
         <p>a todo lo que veo</p>
-        <p>el significado que tiene para mi</p>
+        <p>el significado que tiene para mí</p>
       </div>
+    </header>
 
-      <img src="Imagen1.jpg" class="img-chica" alt="" loading="lazy">
-      <img src="imagen5.jpg" class="img-chica" alt="" loading="lazy">
-
-      <!-- FOTOCALLE CON ZOOM -->
-      <div class="fotocalle-zoom">
-        <img src="fotocalle.jpg" alt="Foto calle baldosa" loading="lazy">
-      </div>
-
+    <div class="gallery">
+      <div class="gallery-item"><img src="imagen1.jpg" alt="Journal 1" loading="lazy"></div>
+      <div class="gallery-item"><img src="imagen2.jpg" alt="Journal 2" loading="lazy"></div>
+      <div class="gallery-item"><img src="imagen3.jpg" alt="Journal 3" loading="lazy"></div>
+      <div class="gallery-item"><img src="imagen4.jpg" alt="Journal 4" loading="lazy"></div>
+      <div class="gallery-item"><img src="imagen5.jpg" alt="Journal 5" loading="lazy"></div>
+      <div class="gallery-item"><img src="imagen6.jpg" alt="Journal 6" loading="lazy"></div>
+      <div class="gallery-item"><img src="imagen7.jpg" alt="Journal 7" loading="lazy"></div>
+      <div class="gallery-item"><img src="imagen8.jpg" alt="Journal 8" loading="lazy"></div>
     </div>
-
-
-    <!-- COLUMNA CENTRAL -->
-    <div class="columna">
-
-      <img src="imagencentral.JPG" class="img-grande" alt="" loading="lazy">
-
-      <img src="imagen6.JPG" class="img-chica" alt="" loading="lazy">
-
-    </div>
-
-
-    <!-- COLUMNA DERECHA -->
-    <div class="columna">
-
-      <img src="madera.jpg" class="img-grande" alt="" loading="lazy">
-      <img src="jesusedit.jpg" class="img-grande" alt="" loading="lazy">
-
-    </div>
-
   </div>
 
 </body>
