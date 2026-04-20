@@ -19,26 +19,13 @@
       display: grid;
       grid-template-columns: 1fr 1.6fr 1fr; /* Columna central un poco más contenida */
       gap: 0.5vw; /* Separación mínima entre columnas */
-      align-items: stretch; /* Todas las columnas tendrán la misma altura */
+      align-items: start; /* Las columnas tendrán su altura natural para un scroll fluido */
     }
 
     .col {
       display: flex;
       flex-direction: column;
       gap: 0.5vw; /* Separación mínima vertical entre imágenes */
-    }
-
-    /* Truco infalible para que la imagen central cubra todo el alto de su columna */
-    .col:nth-child(2) {
-      position: relative;
-    }
-    .col:nth-child(2) img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
 
     img {
@@ -59,16 +46,6 @@
     .texto p {
       margin: 3px 0;
     }
-
-    @media (max-width: 900px) {
-      .grid-container {
-        grid-template-columns: 1fr;
-        gap: 2vw;
-      }
-      .col {
-        gap: 2vw;
-      }
-    }
   </style>
 </head>
 <body>
@@ -84,8 +61,6 @@
         <p>a todo lo que veo</p>
         <p>el significado que tiene para mí</p>
       </div>
-
-      <img src="imagen8.jpg" alt="Imagen 8" loading="lazy">
     </div>
 
     <!-- COLUMNA CENTRAL -->
