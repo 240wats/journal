@@ -1,56 +1,83 @@
-<style>
-    body {
-        margin: 0;
-        padding: 6vw; /* Más margen lateral */
-        background: #ffffff;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        color: #000000;
-        -webkit-font-smoothing: antialiased;
-    }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>240 - Journal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 6vw; 
+            background: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #000000;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    header {
-        margin-bottom: 10vw;
-        font-size: 0.8rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: #888;
-    }
+        header {
+            margin-bottom: 10vw;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #888;
+        }
 
-    .journal-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 12vw; /* Más espacio entre filas */
-        max-width: 900px; /* Estrechamos el contenedor principal */
-        margin: 0 auto;
-    }
+        .journal-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12vw; 
+            max-width: 850px; /* Ancho controlado para que no sean gigantes */
+            margin: 0 auto;
+        }
 
-    .row {
-        display: grid;
-        grid-template-columns: 1fr 1fr; 
-        gap: 8vw; /* Más espacio entre las dos fotos */
-        align-items: start;
-    }
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 8vw; 
+            align-items: start;
+        }
 
-    .single-block {
-        display: block;
-        width: 45%; /* Imagen suelta mucho más chica */
-        margin: 0 auto;
-    }
+        .single-block {
+            display: block;
+            width: 45%; 
+            margin: 0 auto;
+        }
 
-    img {
-        display: block;
-        width: 100%;
-        height: auto;
-        /* Un toque más de contraste para ese look de impresión */
-        filter: grayscale(5%) contrast(1.1); 
-    }
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            filter: grayscale(5%) contrast(1.05); 
+        }
 
-    .caption {
-        margin-top: 12px;
-        font-family: "SF Mono", "Monaco", "Inconsolata", monospace;
-        font-size: 10px; /* Texto más pequeño */
-        color: #999;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-</style>
+        .caption {
+            margin-top: 12px;
+            font-family: "SF Mono", "Monaco", "Inconsolata", monospace;
+            font-size: 10px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Journal / 240
+    </header>
+
+    <main class="journal-grid">
+        
+        <div class="row">
+            <div class="item">
+                <img src="imagen1.jpg" alt="Imagen 1">
+                <div class="caption">Ref. 001</div>
+            </div>
+            <div class="item">
+                <img src="imagen10.jpg" alt="Imagen 10">
+                <div class="caption">Ref. 010</div>
+            </div>
+        </div>
+
+        <div class="single-block">
+            <img src="piedras.jpg" alt="Piedras">
