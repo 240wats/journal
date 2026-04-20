@@ -4,99 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>240 - Journal</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 4vw; /* Mucho margen alrededor, estilo Are.na */
-            background: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #000000;
-            -webkit-font-smoothing: antialiased;
-        }
+   <style>
+    body {
+        margin: 0;
+        padding: 6vw; /* Más margen lateral */
+        background: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #000000;
+        -webkit-font-smoothing: antialiased;
+    }
 
-        /* Título o cabecera simple */
-        header {
-            margin-bottom: 8vw;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
+    header {
+        margin-bottom: 10vw;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #888;
+    }
 
-        .journal-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 10vw; /* Espacio generoso entre bloques verticales */
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .journal-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12vw; /* Más espacio entre filas */
+        max-width: 900px; /* Estrechamos el contenedor principal */
+        margin: 0 auto;
+    }
 
-        /* Contenedor para pares de imágenes */
-        .row {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-            gap: 4vw;
-            align-items: start;
-        }
+    .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 8vw; /* Más espacio entre las dos fotos */
+        align-items: start;
+    }
 
-        /* Contenedor para imagen suelta */
-        .single-block {
-            display: block;
-            width: 60%; /* No ocupa todo el ancho para dar aire editorial */
-            margin: 0 auto;
-        }
+    .single-block {
+        display: block;
+        width: 45%; /* Imagen suelta mucho más chica */
+        margin: 0 auto;
+    }
 
-        img {
-            display: block;
-            width: 100%;
-            height: auto;
-            filter: grayscale(10%) contrast(1.05); /* Un toque sutil de edición */
-        }
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        /* Un toque más de contraste para ese look de impresión */
+        filter: grayscale(5%) contrast(1.1); 
+    }
 
-        .caption {
-            margin-top: 10px;
-            font-family: "SF Mono", "Monaco", "Inconsolata", monospace; /* Tipografía tipo código/Are.na */
-            font-size: 11px;
-            color: #666;
-            text-transform: uppercase;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        Journal / 240
-    </header>
-
-    <main class="journal-grid">
-        
-        <div class="row">
-            <div class="item">
-                <img src="imagen1.jpg" alt="Imagen 1">
-                <div class="caption">Ref. 001</div>
-            </div>
-            <div class="item">
-                <img src="imagen10.jpg" alt="Imagen 10">
-                <div class="caption">Ref. 010</div>
-            </div>
-        </div>
-
-        <div class="single-block">
-            <img src="piedras.jpg" alt="Piedras">
-            <div class="caption">Materia / Piedras</div>
-        </div>
-
-        <div class="row">
-            <div class="item">
-                <img src="imagen5.jpg" alt="Imagen 5">
-                <div class="caption">Ref. 005</div>
-            </div>
-            <div class="item">
-                <img src="imagen9.jpg" alt="Imagen 9">
-                <div class="caption">Ref. 009</div>
-            </div>
-        </div>
-
-    </main>
-
-</body>
-</html>
+    .caption {
+        margin-top: 12px;
+        font-family: "SF Mono", "Monaco", "Inconsolata", monospace;
+        font-size: 10px; /* Texto más pequeño */
+        color: #999;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+</style>
